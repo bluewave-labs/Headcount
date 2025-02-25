@@ -2,14 +2,12 @@ import Box from "@mui/system/Box";
 import Stack from "@mui/system/Stack";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import TextField from "@mui/material/TextField";
-import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import HRMButton from "../Button/HRMButton";
-import { fetchAllByOnboardingId, update } from "../../assets/FetchServices/SurveyResponse";
 import { fonts } from "../../Styles";
 
 /**
- * Menu component for the onboarding page containing survey questions for the new employee.
+ * Menu component for the satisfactory survey response page containing the survey questions.
  * 
  * Props:
  * - prev<Function>: Function provided by the parent component to transition to the previous page.
@@ -18,45 +16,40 @@ import { fonts } from "../../Styles";
  * - next<Function>: Function provided by the parent component to transition to the next page.
  *      Syntax: next()
  * 
- * - save<Function>: Function provided by the parent component to save the onboarding status and navigate to the
- *      application's homepage.
+ * - save<Function>: Function provided by the parent component to save the survey responses and
+ *      return to the main page.
  *      Syntax: save()
  * 
- * - onboardingId<Integer>: Onboarding ID provided by the parent component
+ * - surveyQuestions<Array<Object>>: List of survey question objects containing the question
+ *      text and the employee's response.
+ *      Syntax of object: {
+ *          respondentId: <Integer>
+ *          orderNumber: <Integer>
+ *          question: <String>
+ *          answer: <String>
+ *      }
+ * 
+ * - setSurveyQuestions<Function>: Function provided by the parent component for handling
+ *      the editing of survey responses.
+ *      Syntax: setSurveyQuestions(<new list of survey questions>)
  * 
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {}
  */
-export default function OnboardingSurvey({prev, next, save, onboardingId, style}) {
-    //Survey questions and responses to be displayed
-    const [survey, setSurvey] = useState([]);
-
-    useEffect(() => {
-        getSurvey();
-    }, []);
-
-    //Function for retrieving the onboarding survey questions and responses
-    function getSurvey() {
-        fetchAllByOnboardingId(onboardingId).then((data) => {
-            if (data) {
-                setSurvey(data);
-            }
-        });
-    };
-
-    //Function to handle changes made to the survey responses
+export default function ResponseQuestions({
+    prev, 
+    next, 
+    save, 
+    surveyQuestions, 
+    setSurveyQuestions, 
+    style
+}) {
     function handleChange(e, orderNumber, answer) {
-        const newSurvey = survey.filter((q) => q.orderNumber !== orderNumber);
-        const updatedQuestion = survey.filter((q) => q.orderNumber === orderNumber)[0];
+        const newSurveyQuestions = surveyQuestions.filter((q) => q.orderNumber !== orderNumber);
+        const updatedQuestion = surveyQuestions.filter((q) => q.orderNumber === orderNumber)[0];
         updatedQuestion.answer = answer;
-        newSurvey.push(updatedQuestion);
-        setSurvey(newSurvey)
-    };
-
-    //Function for saving changes to the onboarding survey
-    function saveSurvey() {
-        survey.forEach((response) => update(response));
-        save();
+        newSurveyQuestions.push(updatedQuestion);
+        setSurveyQuestions(newSurveyQuestions);
     };
 
     return (
@@ -69,20 +62,20 @@ export default function OnboardingSurvey({prev, next, save, onboardingId, style}
             fontFamily: fonts.fontFamily
         }, ...style}}>
             {/*Title*/}
-            <h4 style={{textAlign: "center", marginTop: 0, marginBottom: "10px"}}>
+            <h4 style={{ textAlign: "center", marginTop: 0, marginBottom: "10px" }}>
                 Please answer the questions below as detailed as possible
             </h4>
-            <p style={{textAlign: "center", marginBottom: "50px"}}>
+            <p style={{ textAlign: "center", marginBottom: "50px" }}>
                 Your answers are going to be used to further improve our process.
             </p>
             {/*Content*/}
-            {survey.sort((q1, q2) => q1.orderNumber - q2.orderNumber).map((q) => (
+            {surveyQuestions.sort((q1, q2) => q1.orderNumber - q2.orderNumber).map((q) => (
                 <>
-                    <p style={{textAlign: "left", marginBottom: "8px"}}>{q.question}</p>
+                    <p style={{ textAlign: "left", marginBottom: "8px" }}>{q.question}</p>
                     <TextField 
                         id={`${q.question}-textfield`}
                         value={q.answer}
-                        placeholder={"Your answer here"}
+                        placeholder="Your answer here"
                         onChange={(e) => handleChange(e, q.orderNumber, e.target.value)}
                         rows={4}
                         multiline
@@ -95,15 +88,16 @@ export default function OnboardingSurvey({prev, next, save, onboardingId, style}
             ))}
             {/*Buttons*/}
             <Stack direction="row" alignContent="center" justifyContent="space-between">
-                <HRMButton mode="secondaryB" startIcon={<ArrowBackIcon />} onClick={prev}>Previous</HRMButton>
+                <HRMButton mode="secondaryB" startIcon={<ArrowBackIcon />} onClick={prev}>
+                    Previous
+                </HRMButton>
                 <Stack direction="row" alignContent="center" spacing={2}>
-                    <HRMButton 
-                        mode="secondaryB" 
-                        onClick={saveSurvey}
-                    >
+                    <HRMButton mode="secondaryB" onClick={save}>
                         Save and complete later
                     </HRMButton>
-                    <HRMButton mode="primary" onClick={next}>Save and next</HRMButton>
+                    <HRMButton mode="primary" onClick={next}>
+                        Save and next
+                    </HRMButton>
                 </Stack>
             </Stack>
         </Box>
@@ -111,7 +105,7 @@ export default function OnboardingSurvey({prev, next, save, onboardingId, style}
 };
 
 //Control panel settings for storybook
-OnboardingSurvey.propTypes = {
+ResponseQuestions.propTypes = {
     //Function for transitioning to the previous page
     prev: PropTypes.func,
 
@@ -121,11 +115,14 @@ OnboardingSurvey.propTypes = {
     //Function for saving the onboarding status
     save: PropTypes.func,
 
-    //Onboarding ID
-    onboardingID: PropTypes.number
+    //List of survey questions to be displayed
+    surveyQuestions: PropTypes.array,
+
+    //Function for handling editing of survey responses
+    setSurveyQuestions: PropTypes.func
 };
 
 //Default values for this component
-OnboardingSurvey.defaultProps = {
+ResponseQuestions.defaultProps = {
     style: {}
 };

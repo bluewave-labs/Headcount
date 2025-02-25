@@ -100,6 +100,7 @@ export const startSurvey = async (token) => {
   try {
     const url = `${BASE_URL}/api/satisfactionsurvey/questions/start`;
     const res = await axios.post(url, { token: token }, addCred);
+    console.log(res);
     return res.data;
   } catch (err) {
     console.log(err);
