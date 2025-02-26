@@ -6,6 +6,7 @@ import CustomizedSteppers from "../CustomizedSteppers";
 import ResponseStart from "./ResponseStart";
 import ResponseQuestions from "./ResponseQuestions";
 import ResponseComplete from "./ResponseComplete";
+import ResponseError from "./ResponseError";
 import StateContext from "../../context/StateContext"
 
 /**
@@ -18,16 +19,20 @@ import StateContext from "../../context/StateContext"
 export default function ResponsePage({style}) {
     //The current step in the survey process
     const [pageNumber, setPageNumber] = useState(0);
+    //Flag determining if the survey was successfully loaded
+    const [validSurvey, setValidSurvey] = useState(false);
     //List of survey questions
     const [surveyQuestions, setSurveyQuestions] = useState([]);
 
     //Token to be used in the back end API call for starting the survey
     const { token } = useParams(); 
 
+    //Retrieve the survey questions
     useEffect(() => {
         getQuestions();
     }, []);
 
+    //Retrieve the employee's ID
     const stateContext = useContext(StateContext);
     const currentUser = stateContext.state.employee ? stateContext.state.employee.empId : -1;
 
@@ -37,6 +42,7 @@ export default function ResponsePage({style}) {
             console.log(token);
             console.log(data);
             if (data) {
+                setValidSurvey(true);
                 setSurveyQuestions(data.respondent.satisfactionSurveyResponses);
             }
         });
@@ -86,26 +92,34 @@ export default function ResponsePage({style}) {
             paddingY: "50px",
             backgroundColor: "#FCFCFD"
         }, ...style}}>
-            {/*Steps overview*/}
-            <CustomizedSteppers 
-                stepnumber={pageNumber}
-                steps={steps}
-                style={{
-                    marginBottom: "50px"
-                }}
-            />
-            {/*Introduction page*/}
-            {pageNumber === 0 && <ResponseStart next={nextPage} />}
-            {/*Questions page*/}
-            {pageNumber === 1 && <ResponseQuestions 
-                prev={previousPage} 
-                next={nextPage}
-                save={saveResponses}
-                surveyQuestions={surveyQuestions}
-                setSurveyQuestions={(newQuestions) => setSurveyQuestions(newQuestions)}
-            />}
-            {/*Success page*/}
-            {pageNumber === 2 && <ResponseComplete submitResponse={submitResponses} />}
+            {validSurvey ? 
+                <>
+                    {/*Steps overview*/}
+                    <CustomizedSteppers 
+                        stepnumber={pageNumber}
+                        steps={steps}
+                        style={{
+                            marginBottom: "50px"
+                        }}
+                    />
+                    {/*Introduction page*/}
+                    {pageNumber === 0 && <ResponseStart next={nextPage} />}
+                    {/*Questions page*/}
+                    {pageNumber === 1 && <ResponseQuestions 
+                        prev={previousPage} 
+                        next={nextPage}
+                        save={saveResponses}
+                        surveyQuestions={surveyQuestions}
+                        setSurveyQuestions={(newQuestions) => setSurveyQuestions(newQuestions)}
+                    />}
+                    {/*Success page*/}
+                    {pageNumber === 2 && <ResponseComplete submitResponse={submitResponses} />}
+                </> :
+                <>
+                    {/*Error page to be displayed if token is invalid*/}
+                    <ResponseError />
+                </>
+            }
         </Box>
     );
 };

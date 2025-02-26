@@ -20,7 +20,7 @@ export default function ResponseMessage({next, style}) {
         <Box sx={{...{
             border: "1px solid #EBEBEB",
             borderRadius: "10px",
-            width: "1003px",
+            minWidth: "1003px",
             paddingX: "155px",
             paddingY: "69px",
             fontFamily: fonts.fontFamily
