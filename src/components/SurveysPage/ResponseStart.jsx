@@ -9,13 +9,15 @@ import { fonts } from "../../Styles";
  * introductory message.
  * 
  * Props:
+ * - surveyName<String>: Name of the given satisfaction survey.
+ * 
  * - next<Function>: Function provided by the parent component to transition to the next page.
  *      Syntax: next()
  * 
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {}
  */
-export default function ResponseMessage({next, style}) {
+export default function ResponseMessage({surveyName, next, style}) {
     return (
         <Box sx={{...{
             border: "1px solid #EBEBEB",
@@ -27,7 +29,7 @@ export default function ResponseMessage({next, style}) {
         }, ...style}}>
             {/*Title*/}
             <h4 style={{ textAlign: "center", marginTop: 0, marginBottom: "10px" }}>
-                Satisfaction Survey
+                {surveyName}
             </h4>
             {/*Content*/}
             <p>

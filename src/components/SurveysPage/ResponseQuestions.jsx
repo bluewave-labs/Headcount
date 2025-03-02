@@ -40,16 +40,12 @@ export default function ResponseQuestions({
     prev, 
     next, 
     save, 
-    surveyQuestions, 
-    setSurveyQuestions, 
+    surveyData,
+    setResponse,
     style
 }) {
-    function handleChange(e, orderNumber, answer) {
-        const newSurveyQuestions = surveyQuestions.filter((q) => q.orderNumber !== orderNumber);
-        const updatedQuestion = surveyQuestions.filter((q) => q.orderNumber === orderNumber)[0];
-        updatedQuestion.answer = answer;
-        newSurveyQuestions.push(updatedQuestion);
-        setSurveyQuestions(newSurveyQuestions);
+    function handleChange(e, index, answer) {
+        setResponse(index, answer);
     };
 
     return (
@@ -69,14 +65,14 @@ export default function ResponseQuestions({
                 Your answers are going to be used to further improve our process.
             </p>
             {/*Content*/}
-            {surveyQuestions.sort((q1, q2) => q1.orderNumber - q2.orderNumber).map((q) => (
+            {surveyData.respondent.satisfactionSurveyResponses.map((q, index) => (
                 <>
                     <p style={{ textAlign: "left", marginBottom: "8px" }}>{q.question}</p>
                     <TextField 
                         id={`${q.question}-textfield`}
                         value={q.answer}
                         placeholder="Your answer here"
-                        onChange={(e) => handleChange(e, q.orderNumber, e.target.value)}
+                        onChange={(e) => handleChange(e, index, e.target.value)}
                         rows={4}
                         multiline
                         sx={{
@@ -96,7 +92,7 @@ export default function ResponseQuestions({
                         Save and complete later
                     </HRMButton>
                     <HRMButton mode="primary" onClick={next}>
-                        Save and next
+                        Submit
                     </HRMButton>
                 </Stack>
             </Stack>

@@ -1,4 +1,5 @@
 import Box from "@mui/system/Box";
+import CircularProgress from "@mui/material/CircularProgress";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { startSurvey, submitSurvey } from "../../assets/FetchServices/SatisfactionSurvey";
@@ -7,127 +8,161 @@ import ResponseStart from "./ResponseStart";
 import ResponseQuestions from "./ResponseQuestions";
 import ResponseComplete from "./ResponseComplete";
 import ResponseError from "./ResponseError";
-import StateContext from "../../context/StateContext"
+import { produce } from "immer";
 
 /**
  * Satisfactory survey page for employees who have received a survey.
- * 
+ *
  * Props:
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {}
  */
-export default function ResponsePage({style}) {
+export default function ResponsePage({ style }) {
     //The current step in the survey process
     const [pageNumber, setPageNumber] = useState(0);
     //Flag determining if the survey was successfully loaded
-    const [validSurvey, setValidSurvey] = useState(false);
-    //List of survey questions
-    const [surveyQuestions, setSurveyQuestions] = useState([]);
+    const [pageState, setPageState] = useState("loading");
+    // Survey data containing survey questions
+    const [surveyData, setSurveyData] = useState({});
 
     //Token to be used in the back end API call for starting the survey
-    const { token } = useParams(); 
+    const { token } = useParams();
 
-    //Retrieve the survey questions
+    //Retrieve the survey data
     useEffect(() => {
         getQuestions();
     }, []);
 
-    //Retrieve the employee's ID
-    const stateContext = useContext(StateContext);
-    const currentUser = stateContext.state.employee ? stateContext.state.employee.empId : -1;
-
     //Function for retrieving the satisfactory survey questions
     function getQuestions() {
-        startSurvey(token).then((data) => {
-            console.log(token);
-            console.log(data);
+        startSurvey(token)
+        .then((data) => {
             if (data) {
-                setValidSurvey(true);
-                setSurveyQuestions(data.respondent.satisfactionSurveyResponses);
+            setSurveyData(data);
+            setPageState("complete");
             }
+            else {
+                setPageState("error");
+                throw "Either the token provided is invalid or the survey has already been completed.";
+            }
+        })
+        .catch((err) => {
+            setPageState("error");
+            console.log(err);
         });
-    };
+    }
+
+    //Function to set response to each question
+    //Index is the index of the equation in the array
+    //value is the inputs typed by the user.
+    function setResponse(index, value) {
+        try {
+        const data = produce(surveyData, (newSurveyData) => {
+            newSurveyData.respondent.satisfactionSurveyResponses[index].answer =
+            value;
+        });
+        setSurveyData(data);
+        } catch (error) {
+        console.log(error);
+        }
+    }
 
     //Function for transitioning to the previous step
     function previousPage() {
         setPageNumber(pageNumber - 1);
-    };
+    }
 
     //Function for transitioning to the next step
     function nextPage() {
         setPageNumber(pageNumber + 1);
-    };
+    }
 
     //Function for saving the responses and continuing the survey later
     function saveResponses() {
         submitSurvey({
-            respondentId: currentUser,
-            hasCompleted: false,
-            satisfactionSurveyResponses: surveyQuestions
+        respondentId: surveyData.respondent.id,
+        hasCompleted: false,
+        satisfactionSurveyResponses:
+            surveyData.respondent.satisfactionSurveyResponses,
         });
-    };
+    }
 
     //Function for submitting the responses and completing the survey
     function submitResponses() {
         submitSurvey({
-            respondentId: currentUser,
-            hasCompleted: true,
-            satisfactionSurveyResponses: surveyQuestions
+        respondentId: surveyData.respondent.id,
+        hasCompleted: true,
+        satisfactionSurveyResponses:
+            surveyData.respondent.satisfactionSurveyResponses,
         });
-    };
+        nextPage();
+    }
 
     //Labels for each survey step
     const steps = [
-        {label: "Start"},
-        {label: "Answer the questions"},
-        {label: "Finish"}
+        { label: "Start" },
+        { label: "Answer the questions" },
+        { label: "Finish" },
     ];
 
     return (
-        <Box sx={{...{
+        <Box sx={{
+            ...{
             width: "100%",
             height: "100%",
             minHeight: "100vh",
             paddingX: "20%",
             paddingY: "50px",
-            backgroundColor: "#FCFCFD"
-        }, ...style}}>
-            {validSurvey ? 
+            backgroundColor: "#FCFCFD",
+            },
+            ...style,
+        }}>
+            {pageState === "loading" && 
+                <CircularProgress sx={{ marginX: "50%", marginY: "20%" }} />
+            }
+            {pageState ===  "complete" &&
                 <>
                     {/*Steps overview*/}
-                    <CustomizedSteppers 
+                    <CustomizedSteppers
                         stepnumber={pageNumber}
                         steps={steps}
                         style={{
-                            marginBottom: "50px"
+                        marginBottom: "50px",
                         }}
                     />
                     {/*Introduction page*/}
-                    {pageNumber === 0 && <ResponseStart next={nextPage} />}
+                    {pageNumber === 0 && <ResponseStart surveyName={surveyData.name} next={nextPage} />}
                     {/*Questions page*/}
-                    {pageNumber === 1 && <ResponseQuestions 
-                        prev={previousPage} 
-                        next={nextPage}
+                    {pageNumber === 1 && (
+                        <ResponseQuestions
+                        prev={previousPage}
+                        next={submitResponses}
                         save={saveResponses}
-                        surveyQuestions={surveyQuestions}
-                        setSurveyQuestions={(newQuestions) => setSurveyQuestions(newQuestions)}
-                    />}
+                        surveyData={surveyData}
+                        setResponse={setResponse}
+                        />
+                    )}
                     {/*Success page*/}
-                    {pageNumber === 2 && <ResponseComplete submitResponse={submitResponses} />}
-                </> :
+                    {pageNumber === 2 && (
+                        <ResponseComplete submitResponse={submitResponses} />
+                    )}
+                </>
+            }
+            {pageState === "error" &&
                 <>
                     {/*Error page to be displayed if token is invalid*/}
                     <ResponseError />
                 </>
             }
+            
         </Box>
     );
-};
+}
 
 //Control panel settings for storybook
 ResponsePage.propTypes = {};
 
 //Default values for this component
 ResponsePage.defaultProps = {
-    style: {}
+  style: {},
 };

@@ -1,7 +1,6 @@
 import Box from "@mui/system/Box";
 import Stack from "@mui/system/Stack";
 import PropTypes from "prop-types";
-import HRMButton from "../Button/HRMButton";
 import { fonts } from "../../Styles";
 
 /**
@@ -9,13 +8,10 @@ import { fonts } from "../../Styles";
  * survey has been completed.
  * 
  * Props:
- * - submitResponse<Function>: Function for submitting the survey responses.
- *      Syntax: submitResponse()
- * 
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {} 
  */
-export default function ResponseComplete({submitResponse, style}) {
+export default function ResponseComplete({style}) {
     return (
         <Box sx={{...{
             border: "1px solid #EBEBEB",
@@ -32,17 +28,6 @@ export default function ResponseComplete({submitResponse, style}) {
                     Note that your responses will only be anonymously sent to the HR admin,
                     and not your manager.
                 </p>
-                <HRMButton
-                    mode="primary"
-                    onClick={submitResponse}
-                    style={{
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        width: "120px"
-                    }}
-                >
-                    Complete
-                </HRMButton>
             </Stack>
         </Box>
     );

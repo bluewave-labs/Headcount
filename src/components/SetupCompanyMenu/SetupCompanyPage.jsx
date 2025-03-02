@@ -2,7 +2,7 @@ import Box from "@mui/system/Box";
 import SetupCompanyMenu from "./SetupCompanyMenu";
 import SetupMenu from "./SetupMenu";
 import SuccessMenu from "./SuccessMenu";
-import CustomizedSteppers from "./CustomizedSteppers";
+import CustomizedSteppers from "../CustomizedSteppers";
 import { useContext, useState } from "react";
 import StateContext from "../../context/StateContext";
 //Option data
