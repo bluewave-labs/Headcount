@@ -39,7 +39,6 @@ export default function ResponseMessage({surveyName, next, style}) {
             </p>
             {/*Buttons*/}
             <Stack direction="row" alignItems="center" justifyContent="flex-end" spacing={2}>
-                <HRMButton mode="secondaryB">Quit and complete later</HRMButton>
                 <HRMButton mode="primary" onClick={next}>Next</HRMButton>
             </Stack>
         </Box>
