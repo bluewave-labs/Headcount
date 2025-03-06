@@ -1,5 +1,5 @@
 export default function TemplatesTabContent({style}) {
     return (
-        <h3>Templates content here</h3>
+        <h3>Coming soon...</h3>
     );
 };

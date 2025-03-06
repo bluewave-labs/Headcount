@@ -166,7 +166,7 @@ export default function SurveyResponses({responseList, style}) {
                 </Table>
             </TableContainer>
             {/*Survey response popup*/}
-            <Dialog open={surveyPopup} onClose={() => setSurveyPopup(false)}>
+            <Dialog open={surveyPopup} onClose={() => setSurveyPopup(false)} maxWidth="md" fullWidth>
                 <SurveyResponsePopup 
                     survey={filteredRes[surveyIndex]} 
                     hasPrev={surveyIndex > 0}

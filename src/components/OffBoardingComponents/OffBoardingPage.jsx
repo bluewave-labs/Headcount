@@ -5,7 +5,7 @@ import ThirdStep from "./ThirdStep";
 import { multiStepContext } from "../../context/stepContext";
 import FinalStep from "./FinalStep";
 import { Box } from "@mui/system";
-import CustomizedSteppers from "../SetupCompanyMenu/CustomizedSteppers";
+import CustomizedSteppers from "../CustomizedSteppers";
 import ErrorPage from "../Error/ErrorPage";
 import NoContentComponent from "../PeopleComponents/NoContentComponent";
 import { useParams } from "react-router-dom";

@@ -33,10 +33,10 @@ export default function OnboardingPage({style}) {
 
     //Function for retrieving onboarding status
     function getOnboarding() {
-        console.log(stateContext.state.employee);
+        //console.log(stateContext.state.employee);
         fetchByEmployeeId(currentUser).then((data) => {
             if (data) {
-                console.log(data);
+                //console.log(data);
                 setOnboardingStatus(data);
             }
         });
@@ -50,7 +50,7 @@ export default function OnboardingPage({style}) {
     //Function for transitioning to the next step
     function nextPage() { 
         setOnboardingStatus({...onboardingStatus, stepNumber: onboardingStatus.stepNumber + 1});
-        console.log(onboardingStatus.id);
+        //console.log(onboardingStatus.id);
     };
 
     //Function for saving onboarding process for later
@@ -72,9 +72,9 @@ export default function OnboardingPage({style}) {
             ...stateContext.state.employee,
             completedOnboardingAt: dayjs()
         })
-        console.log(stateContext.state.employee);
+        //console.log(stateContext.state.employee);
         navigate("/dashboard", { replace: true });
-    }
+    };
 
     //Labels for each onboarding step
     const steps = [
@@ -84,7 +84,7 @@ export default function OnboardingPage({style}) {
         {label: "To-dos"},
         {label: "Survey"},
         {label: "Finish"}
-    ]
+    ];
 
     return (
         <Box sx={{...{
