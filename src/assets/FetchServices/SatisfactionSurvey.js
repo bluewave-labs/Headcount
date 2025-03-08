@@ -48,7 +48,20 @@ Expected data format
     "startedAt": "2024-08-31T05:00:00.000Z",
     "completedAt": null,
     "anonymous": false,
-    "satisfactionSurveyRecipients": [20, 15], //*** representing employee ids
+    "satisfactionSurveyRecipients": [
+     {
+            "empId": 20,
+            "category": "Category9",
+            "teamName": "Development",
+            "name": "Kettie Nortcliffe"
+        },
+        {
+            "empId": 11,
+            "category": "Category9",
+            "teamName": "Development",
+            "name": "Iosep Brammer"
+        },    
+    ],
        "satisfactionSurveyQuestions": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
         "Labore et dolore magna aliqua. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus.",
@@ -127,12 +140,26 @@ export const submitSurvey = async (data) => {
   }
 };
 
-
-// Expected data format
-// { id --surveyId
-// satisfactionSurveyRecipients:[1,2,3] -- array of employee ides
-// frontendUrl 
-// }
+/**
+ Expected data format
+{ id --surveyId
+ satisfactionSurveyRecipients:[
+  {
+  "empId": 20,
+  "category": "Category9",
+  "teamName": "Development",
+  "name": "Kettie Nortcliffe"
+},
+{
+  "empId": 11,
+  "category": "Category9",
+  "teamName": "Development",
+  "name": "Iosep Brammer"
+}
+ ] -- array of employee ides
+ frontendUrl 
+ } 
+ */
 export const sendSurvey = async (data) => {
   try {
     const url = `${BASE_URL}/api/satisfactionsurvey/questions/send`;
@@ -149,7 +176,7 @@ export const sendSurvey = async (data) => {
 export const downloadSurveyResults = async (surveyId) => {
   try {
     const url = `${BASE_URL}/api/satisfactionsurvey/results/download`;
-    const res = await axios.post(url, {surveyId: surveyId});
+    const res = await axios.post(url, { surveyId: surveyId });
     return res.data;
   } catch (err) {
     console.log(err);

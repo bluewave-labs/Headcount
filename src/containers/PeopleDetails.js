@@ -43,10 +43,10 @@ function formatTableData({
     });
 
     // Create and push handleSurvey function menu
-    data.push({
-      label: "Send exit survey",
-      action: () => handleSurvey(employee),
-    });
+    // data.push({ //  It can be displayed in newer version of the application
+    //   label: "Send exit survey",
+    //   action: () => handleSurvey(employee),
+    // });
     // Create and push handleTermination function menu
     data.push({
       label: "End employment",
