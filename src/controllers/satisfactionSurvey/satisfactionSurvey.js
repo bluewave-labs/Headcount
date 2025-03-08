@@ -116,7 +116,7 @@ const sendEmail = async ({ surveyObject, emailData, frontendUrl }) => {
       employeeName: `${employee.firstName} ${employee.lastName}`,
       url: `${frontendUrl}${employee.accessToken}`, // Unique url
       email: process.env.EMAIL, // Support email
-      copyrightYear: 2024,
+      copyrightYear: new Date().getFullYear(),
       endDate,
     };
 
@@ -127,7 +127,6 @@ const sendEmail = async ({ surveyObject, emailData, frontendUrl }) => {
       surveyObject.name // Subject
     );
     console.log(`Email sent successfully! Message ID: ${messageId}`);
-    //console.log("\n\n", `Access token ${frontendUrl}${employee.accessToken}`, "\n\n");
   }
 };
 
@@ -187,6 +186,34 @@ const createRespondents = async ({ surveyId, anonymous, empIds }) => {
     validate: true,
   });
   return emailData;
+};
+
+const createResponses = async (surveyId) => {
+  const query = `SELECT r.id "respondentId", q."orderNumber", q.question FROM "satisfactionSurveyRespondent" r JOIN "satisfactionSurveyQuestion" q ON r."surveyId" = q."surveyId" WHERE r."surveyId" = :surveyId ORDER BY 1, 2;`;
+  const [results, metadata] = await db.sequelize.query(query, {
+    replacements: { surveyId: surveyId },
+  });
+  if (results.length > 0) {
+    await db.satisfactionSurveyResponse.bulkCreate(results, {
+      validate: true,
+    });
+  }
+};
+
+const createResponsesForExistingSurvey = async (surveyId) => {
+  const query = `SELECT rt.id "respondentId", q."orderNumber", q.question
+                FROM "satisfactionSurveyRespondent" rt
+                LEFT JOIN "satisfactionSurveyResponse" rs ON rs."respondentId" = rt.id 
+                JOIN "satisfactionSurveyQuestion" q ON q."surveyId" = rt."surveyId"
+                WHERE rs."respondentId" IS NULL AND rt."surveyId" = :surveyId;`;
+
+  const [results, metadata] = await db.sequelize.query(query, {
+    replacements: { surveyId: surveyId },
+  });
+
+  if (results.length > 0) {
+    await db.satisfactionSurveyResponse.bulkCreate(results);
+  }
 };
 
 exports.showAll = async (req, res) => {
@@ -267,6 +294,10 @@ exports.createRecord = async (req, res) => {
         anonymous: data.anonymous,
         empIds,
       });
+      if (satisfactionSurveyQuestions) {
+        // Create response data
+        createResponses(surveyId);
+      }
       // Send email to the recipients
       await sendEmail({ surveyObject: data, emailData, frontendUrl });
     }
@@ -300,10 +331,11 @@ exports.startSurvey = async (req, res) => {
       include: [
         {
           model: db.satisfactionSurveyResponse,
-          attributes: ["id", "question", "answer"],
+          attributes: ["id", "orderNumber", "question", "answer"],
         },
       ],
       where: { accessToken: token, hasCompleted: false }, //cannot access survey after submission
+      order: [[{ model: db.satisfactionSurveyResponse }, "orderNumber", "ASC"]],
     });
     if (!respondent) {
       // If respondent is null, the token is invalid or survey has been completed
@@ -312,15 +344,15 @@ exports.startSurvey = async (req, res) => {
       });
     }
 
+    if (!respondent.satisfactionSurveyResponses || (respondent.satisfactionSurveyResponses && respondent.satisfactionSurveyResponses.length === 0)) {
+      // no questions attached. This is not expected to happen.as been completed
+      return res.status(400).json({
+        error: message.invalidToken,
+      });
+    }
+
     //Check if deadline for submission has not passed
     const survey = await db.satisfactionSurvey.findOne({
-      include: [
-        {
-          model: db.satisfactionSurveyQuestion,
-          attributes: ["orderNumber", "question"],
-          order: ["orderNumber"],
-        },
-      ],
       where: {
         id: respondent.surveyId,
         [db.Sequelize.Op.or]: [
@@ -338,29 +370,17 @@ exports.startSurvey = async (req, res) => {
       });
     }
 
-    if (respondent.satisfactionSurveyResponses.length === 0) {
-      //New respondent, create new reponse data
-      for (let question of survey.satisfactionSurveyQuestions) {
-        const data = {
-          respondentId: respondent.id,
-          orderNumber: question.orderNumber,
-          question: question.question,
-        };
-        const q = await db.satisfactionSurveyResponse.create(data);
-        respondent.satisfactionSurveyResponses.push({
-          id: q.id,
-          question: q.question,
-          answer: null,
-        });
-      }
+    if (!respondent.startedAt) {
       // Set start time
       await respondent.set({ startedAt: new Date() });
       await respondent.save();
     }
-    const finalData = { ...survey.toJSON(), respondent };
+    const respondentData = { ...respondent.dataValues };
+    const finalData = { ...survey.toJSON(), respondent: respondentData };
     delete finalData.createdAt;
     delete finalData.updatedAt;
     delete finalData.satisfactionSurveyQuestions;
+    delete finalData.respondent.updatedAt;
 
     res.status(200).send(finalData);
   } catch (error) {
@@ -400,14 +420,14 @@ exports.submitSurvey = async (req, res) => {
 // Send url of an existing survey to an array of recipients
 exports.sendSurvey = async (req, res) => {
   try {
-const x =  {
-  "surveyId": 9,
-  "empId": 20,
-  "category": "Category9",
-  "teamName": "Development",
-  "name": "Kettie Nortcliffe"
-}
-
+    /**
+     *  satisfactionSurveyRecipients = {
+      empId: 20,
+      category: "Category9",
+      teamName: "Development",
+      name: "Kettie Nortcliffe",
+    };
+     */
     const { id, satisfactionSurveyRecipients, frontendUrl } = req.body;
     const survey = await db.satisfactionSurvey.findByPk(id);
     if (!survey) {
@@ -417,7 +437,7 @@ const x =  {
     }
     if (survey.completedAt && survey.completedAt < new Date()) {
       return res.status(400).json({
-        error: `The satifaction survey associated with id ${id} has expired`,
+        error: `The satifaction survey associated with id ${id} has been completed`,
       });
     }
 
@@ -445,12 +465,12 @@ const x =  {
         }
       } else {
         // Save recipient data
-        recipient.surveyId = id
+        recipient.surveyId = id;
         recipientData.push(recipient);
         newRecipient.push(recipient.empId);
       }
     }
-
+   
     await db.satisfactionSurveyRecipient.bulkCreate(recipientData, {
       validate: true,
     });
@@ -461,8 +481,12 @@ const x =  {
       anonymous: survey.anonymous,
       empIds: newRecipient,
     });
+
+    // Create responses for new respondents
+    createResponsesForExistingSurvey(id);
+   
     // Send email to the recipients
-    await sendEmail({ surveyObject: survey, emailData, frontendUrl });
+   await sendEmail({ surveyObject: survey, emailData, frontendUrl });
     res.status(200).send({
       newRecipient: newRecipient.length,
       existingRecipient: existingRecipient.length,

@@ -117,7 +117,7 @@ async function createEmailContext({ empId, email, db, copyrightYear }) {
       : `Sir/Madam`,
     companyName: company ? `${company.companyName}` : "BlueWave Labs",
     email: process.env.EMAIL, // Support email
-    copyrightYear: copyrightYear? copyrightYear : 2024
+    copyrightYear: copyrightYear? copyrightYear : new Date().getFullYear()
   };
   return context;
 }

@@ -21,7 +21,7 @@
   },
   {
     "surveyId": 1,
-    "orderNumber": 5,
+    "orderNumber": 0,
     "question": "Was your issue resolved to your satisfaction?"
   },
   {
@@ -46,7 +46,7 @@
   },
   {
     "surveyId": 2,
-    "orderNumber": 5,
+    "orderNumber": 0,
     "question": "Did you encounter difficulties using our [website/mobile app?] Please explain."
   }
 ]
