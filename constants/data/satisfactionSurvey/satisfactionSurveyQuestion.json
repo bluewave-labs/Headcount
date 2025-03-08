@@ -1,22 +1,22 @@
 [
   {
     "surveyId": 1,
-    "orderNumber": 1,
+    "orderNumber": 0,
     "question": "How would you rate your satisfaction with the communication you received from BlueWave Labs?"
   },
   {
     "surveyId": 1,
-    "orderNumber": 2,
+    "orderNumber": 1,
     "question": "How satisfied were you with the response time of our customer support team?"
   },
   {
     "surveyId": 1,
-    "orderNumber": 3,
+    "orderNumber": 2,
     "question": "How would you rate the helpfulness of our customer service representatives?"
   },
   {
     "surveyId": 1,
-    "orderNumber": 4,
+    "orderNumber": 3,
     "question": "Rate your level of satisfaction with your recent customer service experience."
   },
   {
@@ -26,22 +26,22 @@
   },
   {
     "surveyId": 2,
-    "orderNumber": 1,
+    "orderNumber": 0,
     "question": "How would you rate your satisfaction with our mobile app? "
   },
   {
     "surveyId": 2,
-    "orderNumber": 2,
+    "orderNumber": 1,
     "question": "How easily were you able to navigate through our website?"
   },
   {
     "surveyId": 2,
-    "orderNumber": 3,
+    "orderNumber": 2,
     "question": "Were you able to find the information you were looking for? "
   },
   {
     "surveyId": 2,
-    "orderNumber": 4,
+    "orderNumber": 3,
     "question": "How satisfied are you with the checkout process on our [website/mobile app]?"
   },
   {
