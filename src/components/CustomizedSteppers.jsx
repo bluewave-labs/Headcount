@@ -15,7 +15,7 @@ import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector
 import StepContent from '@mui/material/StepContent';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import '../App.css';
+import "./CustomizedSteppers.css";
 import { fonts, colors } from '../Styles';
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({

@@ -26,6 +26,7 @@ export const Primary = {
             requestedDaysTotal: '2 days',
             timeOffCategory: 'Vacation'
         },
-        close: () => {}
+        close: () => {},
+        refresh: () => {}
     }
 };

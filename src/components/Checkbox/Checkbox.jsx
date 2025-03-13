@@ -29,8 +29,8 @@ import './Checkbox.css';
  *      Default: true
  */
 export default function Checkbox({type, id, name, value, size, checked, style, onChange, enabled}) {
+    if (checked) {
         return (
-            (checked) ?
             <input 
                 className={[type, size].join(' ')}
                 type={type}
@@ -40,8 +40,12 @@ export default function Checkbox({type, id, name, value, size, checked, style, o
                 style={style}
                 onChange={onChange}
                 disabled={!enabled}
-                checked
-            /> :
+                checked="checked"
+            />
+        );
+    }
+    else {
+        return (
             <input 
                 className={[type, size].join(' ')}
                 type={type}
@@ -53,6 +57,7 @@ export default function Checkbox({type, id, name, value, size, checked, style, o
                 disabled={!enabled}
             />
         );
+    }
 };
 
 //Control panel settings for storybook
@@ -71,6 +76,7 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
     type: 'checkbox',
     size: 'small',
+    onChange: () => {},
     checked: false,
     style: {},
     enabled: true

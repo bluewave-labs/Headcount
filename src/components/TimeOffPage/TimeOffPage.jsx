@@ -1,11 +1,11 @@
+import Box from '@mui/system/Box';
 import Stack from '@mui/system/Stack';
 import Dialog from '@mui/material/Dialog';
+import { useState } from 'react';
 import TimeOffMenu from './TimeOffMenu';
 import TimeOffRequest from '../PopupComponents/TimeOffRequest';
 import TimeOffRequestSent from '../PopupComponents/TimeOffRequestSent';
 import HRMButton from '../Button/HRMButton';
-import { useState } from 'react';
-import Page from '../StaticComponents/Page';
 
 /**
  * Time off page of the HRM application. Contains the time off menu as well as controls for 
@@ -14,31 +14,33 @@ import Page from '../StaticComponents/Page';
  * Props:
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {}
- * 
- * - innerStyle<Object>: Optional prop for adding further inline styling in the inner component.
- *      Default: {}
  */
-export default function TimeOffPage({style, innerStyle}) {
+export default function TimeOffPage({style}) {
     //States determining whether the time off request menu and request successful notifications
     //should be displayed
     const [openRequest, setOpenRequest] = useState(false);
     const [requestSuccess, setRequestSuccess] = useState(false);
+    //Hook for updating the list of time off periods
+    const [update, setUpdate] = useState(false);
+    //console.log(update);
 
     //Function for sending a time off request
     function sendRequest() {
         setOpenRequest(false);
         setRequestSuccess(true);
+        setTimeout(() => setRequestSuccess(false), 5000);
+        setUpdate(!update);
     }
 
     return (
-        <Page style={style} innerStyle={innerStyle}>
+        <Box sx={style}>
             {/*Main page content*/}
             <Stack
                 direction="row"
                 alignItems="center"
                 justifyContent="space-between"
                 sx={{
-                    marginBottom: "40px"
+                    marginBottom: "16px"
                 }}
             >
                 <h3>Time off</h3>
@@ -49,12 +51,12 @@ export default function TimeOffPage({style, innerStyle}) {
                     Request new time off
                 </HRMButton>
             </Stack>
-            <TimeOffMenu />
+            <TimeOffMenu update={update} />
             {/*Time off request menu*/}
             <Dialog open={openRequest} onClose={() => setOpenRequest(false)}>
                 <TimeOffRequest 
                     close={() => setOpenRequest(false)} 
-                    sendRequest={() => sendRequest()} 
+                    sendRequest={sendRequest} 
                 />
             </Dialog>
             {/*Request successful notification*/}
@@ -68,7 +70,7 @@ export default function TimeOffPage({style, innerStyle}) {
                     zIndex: 999
                 }} 
             />
-        </Page>
+        </Box>
     );
 };
 
@@ -78,5 +80,5 @@ TimeOffPage.propTypes = {};
 //Default values for this component
 TimeOffPage.defaultProps = {
     style: {},
-    innerStyle: {}
+    //innerStyle: {}
 };

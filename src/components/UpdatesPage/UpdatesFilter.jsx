@@ -27,8 +27,8 @@ export default function UpdatesFilter({filter, handleFilter, style}) {
                 height: "34px"
             }, ...style}}
         >
-            <ToggleButton value="All" sx={{textTransform: "none", paddingY: "4px"}}>All</ToggleButton>
-            <ToggleButton value="Unread" sx={{textTransform: "none", paddingY: "4px"}}>Unread</ToggleButton>
+            <ToggleButton value="All" disableTouchRipple sx={{textTransform: "none", paddingY: "4px"}}>All</ToggleButton>
+            <ToggleButton value="Unread" disableTouchRipple sx={{textTransform: "none", paddingY: "4px"}}>Unread</ToggleButton>
         </ToggleButtonGroup>
     );
 };

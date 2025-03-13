@@ -11,8 +11,8 @@ import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 
 /**
- * Popup component for displaying the date selector controls. Used to set the starting and 
- * ending dates for a time off period.
+ * Popup component for displaying the date selector controls. Used to set starting and 
+ * ending dates.
  * 
  * Props:
  * - close<Function>: Function for closing this popup component.
@@ -21,13 +21,16 @@ import PropTypes from 'prop-types';
  * - setDate<Function>: Function for setting the date in the parent component.
  *      Syntax: setDate(<JavaScript date>)
  * 
+ * - initialValue<Date>: Default value for the date selector.
+ * 
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {}
  */
-export default function DateSelect({close, setDate, style}) {
-    const [value, setValue] = useState(dayjs());
-    const today = dayjs();
+export default function DateSelect({close, setDate, initialValue, style}) {
+    //Value of the date to be set
+    const [value, setValue] = useState(dayjs(initialValue));
 
+    //Function for setting the date in the parent component
     function submit() {
         setDate(value.toDate());
         close();
@@ -46,7 +49,7 @@ export default function DateSelect({close, setDate, style}) {
                     <DateCalendar 
                         value={value} 
                         onChange={(newValue) => setValue(newValue)} 
-                        minDate={today}
+                        minDate={dayjs()}
                     />
                 </LocalizationProvider>
                 <Divider />

@@ -1,62 +1,61 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import FirstStep from "./FirstStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
-import { Step, StepLabel, Stepper } from "@mui/material";
 import { multiStepContext } from "../../context/stepContext";
 import FinalStep from "./FinalStep";
-import {
-  bgcolor,
-  Box,
-  display,
-  height,
-  margin,
-  padding,
-  textAlign,
-  width,
-} from "@mui/system";
+import { Box } from "@mui/system";
+import CustomizedSteppers from "../SetupCompanyMenu/CustomizedSteppers";
+import ErrorPage from "../Error/ErrorPage";
+import NoContentComponent from "../PeopleComponents/NoContentComponent";
+import { useParams } from "react-router-dom";
 
-function OffBoardingPage() {
-  const { currentStep } = useContext(multiStepContext);
-  const stepStyle = {
-    "&.MuiStepper-root": {
-      padding: "50px 50px",
-    },
-    "& .MuiStepConnector-line": {
-      marginTop: "-15px",
-      width: "100%",
-    },
-    "& .Mui-active": {
-      "&.MuiStepIcon-root": {
-        color: "#7F56D9",
-      },
-      "& .MuiStepConnector-line": {
-        border: "1px solid #7f56d9",
-      },
-      "& .MuiSvgIcon-root": {
-        fontSize: "30px",
-      },
-    },
-    "& .Mui-completed": {
-      "&.MuiStepIcon-root": {
-        color: "#7F56D9",
-      },
-      "& .MuiStepConnector-line": {
-        border: "1px solid #7f56d9",
-      },
-      "& .MuiSvgIcon-root": {
-        fontSize: "30px",
-      },
-    },
-    "& .MuiStepLabel-root": {
-      display: "flex",
-      flexDirection: "column",
-      textAlign: "center",
-      "& .MuiStepLabel-label": {
-        marginTop: "10px",
-      },
-    },
-  };
+const api = require("../../assets/FetchServices");
+
+function OffboardingPage() {
+  const { state, setState, setDownloadable } = useContext(multiStepContext);
+
+  const { token } = useParams();
+  const [status, setStatus] = useState({
+    error: false,
+    loading: true,
+  });
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        if (!token) {
+          throw "Token is null";
+        }
+        const data = await api.offboarding.fetchOneByToken(token);
+        if (!data) {
+          throw "Invalid token";
+        }
+        setState(data);
+        const downloadable = await api.offboardingDocument.fetchAll();
+        setDownloadable(downloadable);
+        setStatus({ ...status, loading: false });
+      } catch (err) {
+        console.log(err);
+        setStatus({
+          error: true,
+          loading: false,
+        });
+      }
+    }
+    fetchData();
+  }, []);
+
+  if (status.loading) {
+    return (
+      <NoContentComponent>
+        <p>Loading. Please wait...</p>
+      </NoContentComponent>
+    );
+  }
+  if (status.error) {
+    return <ErrorPage />;
+  }
   function showstep(step) {
     switch (step) {
       case 1:
@@ -73,32 +72,27 @@ function OffBoardingPage() {
     <>
       <Box
         width={"1003px"}
-        margin={"20px auto"}
-        paddingInline={0}
-        sx={{ border: "2px solid #ebebeb" }}
+        height={"166px"}
+        margin={"125px auto 49px auto"}
+        sx={{
+          border: "2px solid #ebebeb",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
       >
-        <Stepper
-          activeStep={currentStep - 1}
-          orientation="horizontal"
-          sx={stepStyle}
-        >
-          <Step>
-            <StepLabel>Start</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Sign and Upload</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Complete questionnaire </StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Finish </StepLabel>
-          </Step>
-        </Stepper>
+        <CustomizedSteppers
+          stepnumber={state.step - 1}
+          steps={[
+            { label: "Start", description: "" },
+            { label: "Sign and Upload", description: "" },
+            { label: "Complete questionnaire", description: "" },
+            { label: "Finish", description: "" },
+          ]}
+        />
       </Box>
-      {showstep(currentStep)}
+      {showstep(state.step)}
     </>
   );
 }
 
-export default OffBoardingPage;
+export default OffboardingPage;

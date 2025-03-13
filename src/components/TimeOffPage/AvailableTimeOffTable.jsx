@@ -5,8 +5,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { styled } from '@mui/system';
-import { colors, fonts } from '../../Styles';
 import PropTypes from 'prop-types';
+import { colors, fonts } from '../../Styles';
+
 
 /**
  * Menu component for listing the available time off policies and the time used and available 
@@ -48,11 +49,13 @@ export default function AvailableTimeOffTable({policies, style}) {
                 </TableHead>
                 {/*Policy information*/}
                 <TableBody>
-                    {policies.map((policy) => (
+                    {Object.values(policies).map((policy) => (
                         <TableRow>
                             <TableBodyCell sx={{width: "50%", paddingLeft: "25px"}}><b>{policy.type}</b></TableBodyCell>
-                            <TableBodyCell>{policy.availableDays}</TableBodyCell>
-                            <TableBodyCell>{policy.hoursUsed}</TableBodyCell>
+                            <TableBodyCell>
+                                {Math.floor(policy.availableHours / 8)} days ({policy.availableHours} hours) 
+                            </TableBodyCell>
+                            <TableBodyCell>{policy.hoursUsed} hours used</TableBodyCell>
                         </TableRow>
                     ))}
                 </TableBody>

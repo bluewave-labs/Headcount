@@ -16,10 +16,10 @@ import MenuItem from '../BasicMenus/MenuItem';
  * - menuItems<Object>: Object containing states and functions for setting states in 
  *      parent components.
  *      Syntax: {
- *          <item name1>: [<item state1>, <setState function1>],
- *          <item name2>: [<item state2>, <setState function2>],
+ *          <item name1>: [<item state1> <setState function1>]
+ *          <item name2>: [<item state2> <setState function2>]
  *          ...
- *          <item nameN>: [<item stateN>, <setState functionN>]
+ *          <item nameN>: [<item stateN> <setState functionN>]
  *      }
  * 
  * - icon<Component>: Optional prop for including an icon in the button label.
@@ -57,9 +57,9 @@ export default function MenuToggleButton({label, menuItems, icon, style}) {
                 zIndex: 999, 
                 right: 0}}>
                 <List>
-                    {Object.entries(menuItems).map(([k, v]) => (
+                    {Object.entries(menuItems).map(([key, value]) => (
                         <ListItem sx={{width: 300, paddingX: 1, paddingY: "3px"}}>
-                            <MenuItem state={v[0]} setState={v[1]}>{k}</MenuItem>
+                            <MenuItem state={value[0]} setState={value[1]}>{key}</MenuItem>
                         </ListItem>
                     ))}
                 </List>

@@ -1,0 +1,1719 @@
+{
+  "1": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "2": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "3": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "4": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "5": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "6": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "7": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "8": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "9": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "10": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "11": [
+      {
+          "type": "Vacation",
+          "availableDays": 18,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "12": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "13": [
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 18,
+          "hoursUsed": 0
+      }
+  ],
+  "14": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "15": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "16": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "17": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "18": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "19": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "20": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "21": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "22": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "23": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "24": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "25": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "26": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "27": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "28": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "29": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      }
+  ],
+  "30": [
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "31": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "32": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "33": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "34": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "35": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "36": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "37": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "38": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "39": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "40": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "41": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "42": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "43": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "44": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "45": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "46": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "47": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "48": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "49": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "50": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "51": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "52": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "53": [
+      {
+          "type": "Vacation",
+          "availableDays": 18,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "54": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "55": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "56": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "57": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "58": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "59": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "60": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "61": [
+      {
+          "type": "Vacation",
+          "availableDays": 18,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "62": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      }
+  ],
+  "63": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      }
+  ],
+  "64": [
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "65": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "66": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "67": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "68": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "69": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "70": [
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "71": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      }
+  ],
+  "72": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "73": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "74": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      }
+  ],
+  "75": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "76": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      }
+  ],
+  "77": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "78": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "79": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "80": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "81": [
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "82": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "83": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "84": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "85": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "86": [
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 18,
+          "hoursUsed": 0
+      }
+  ],
+  "87": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 18,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "88": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "89": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "90": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "91": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      }
+  ],
+  "92": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      }
+  ],
+  "93": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "94": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "95": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "96": [
+      {
+          "type": "Vacation",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 9,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "97": [
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "98": [
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ],
+  "99": [
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Vacation",
+          "availableDays": 2,
+          "hoursUsed": 0
+      }
+  ],
+  "100": [
+      {
+          "type": "Vacation",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 1,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 4,
+          "hoursUsed": 0
+      }
+  ],
+  "101": [
+      {
+          "type": "Vacation",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Sick Leave",
+          "availableDays": 0,
+          "hoursUsed": 0
+      },
+      {
+          "type": "Bereavement",
+          "availableDays": 1,
+          "hoursUsed": 0
+      }
+  ]
+}

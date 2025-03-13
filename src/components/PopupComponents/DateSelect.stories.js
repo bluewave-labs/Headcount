@@ -1,4 +1,5 @@
 import DateSelect from './DateSelect';
+import dayjs from 'dayjs';
 
 //Storybook display settings
 export default {
@@ -14,6 +15,7 @@ export default {
 export const Primary = {
     args: {
         close: () => {},
-        setDate: (value) => {}
+        setDate: (value) => {},
+        initialValue: dayjs()
     }
 };

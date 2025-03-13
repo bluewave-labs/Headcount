@@ -109,6 +109,7 @@ export default function HRMButton({mode, children, startIcon, endIcon, onClick, 
                 onClick={onClick} 
                 disabled={!enabled} 
                 disableElevation
+                disableTouchRipple
             >
                 {children}
             </StyledButton>
@@ -122,6 +123,7 @@ export default function HRMButton({mode, children, startIcon, endIcon, onClick, 
                 variant="outlined" 
                 onClick={onClick} 
                 disabled={!enabled}
+                disableTouchRipple
             >
                 {children}
             </StyledButton>
@@ -133,8 +135,9 @@ export default function HRMButton({mode, children, startIcon, endIcon, onClick, 
                 startIcon={startIcon} 
                 endIcon={endIcon} 
                 variant="text" 
-                onClick={onClick}
                 disabled={!enabled}
+                onClick={onClick}
+                disableTouchRipple
             >
                 {children}
             </StyledButton>

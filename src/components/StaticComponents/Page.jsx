@@ -20,7 +20,6 @@ export default function Page({children, style, innerStyle}) {
         <Box sx={{...{
             width: "100%", 
             height: "100%", 
-            backgroundColor: "#F9FAFB",
             color: colors.darkGrey,
             fontFamily: fonts.fontFamily
         }, ...style}}>
@@ -36,6 +35,8 @@ export default function Page({children, style, innerStyle}) {
                 paddingBottom: "40px", 
                 width: "100%",
                 height: "100%",
+                minHeight: "100vh",
+                backgroundColor: "#F9FAFB",
             }, ...innerStyle}}>
                 {/*Main page content*/}
                 {children}

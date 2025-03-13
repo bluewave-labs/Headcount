@@ -1,0 +1,16 @@
+@import url(./variables.css);
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: left;
+  color: #101828;
+}
+label {
+  display: block;
+  line-height: 20px;
+  font-size: 13px;
+  color: var(--main-text-color);
+  font-weight: 600;
+}

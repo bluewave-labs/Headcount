@@ -1,0 +1,75 @@
+{
+  "admin": [
+    { "id": "empId", "width": 50, "label": "Emp No", "visible": false },
+    { "id": "name", "width": 180, "label": "Name", "visible": true },
+    {
+      "id": "preferredName",
+      "width": 100,
+      "label": "Preferred Name",
+      "visible": false
+    },
+    { "id": "role", "width": 200, "label": "Role", "visible": true },
+    { "id": "team", "width": 210, "label": "Team", "visible": true },
+    { "id": "manager", "width": 150, "label": "Manager", "visible": true },
+    {
+      "id": "department",
+      "width": 150,
+      "label": "Department",
+      "visible": true
+    },
+    { "id": "phoneNumber", "width": 150, "label": "Phone", "visible": true },
+    { "id": "email", "width": 200, "label": "Email", "visible": true },
+    { "id": "gender", "width": 50, "label": "Gender", "visible": false },
+    {
+      "id": "nationality",
+      "width": 100,
+      "label": "Nationality",
+      "visible": false
+    },
+    {
+      "id": "dateOfBirth",
+      "width": 150,
+      "label": "Birthday",
+      "visible": false
+    },
+    {
+      "id": "maritalStatus",
+      "width": 100,
+      "label": "Marital Status",
+      "visible": false
+    },
+    { "id": "hireDate", "width": 150, "label": "Hire Date", "visible": false },
+    { "id": "salary", "width": 80, "label": "Salary", "visible": false },
+    {
+      "id": "employmentType",
+      "width": 120,
+      "label": "Emp Type",
+      "visible": false
+    },
+    {
+      "id": "compensationType",
+      "width": 120,
+      "label": "Comp. Type",
+      "visible": false
+    },
+    { "id": "weeklyHours", "width": 50, "label": "Hours", "visible": false },
+    {
+      "id": "officeLocation",
+      "width": 100,
+      "label": "Office",
+      "visible": true
+    },
+    { "id": "action", "width": 30, "label": "Action", "visible": true }
+  ],
+
+  "others": [
+    { "id": "name", "width": 180, "label": "Name", "visible": true },
+    { "id": "role", "width": 200, "label": "Role", "visible": true },
+    { "id": "team", "width": 210, "label": "Team", "visible": true },
+    { "id": "manager", "width": 150, "label": "Manager", "visible": true },
+    { "id": "phoneNumber", "width": 150, "label": "Phone", "visible": true },
+    { "id": "email", "width": 200, "label": "Email", "visible": true },
+    { "id": "officeLocation", "width": 120, "label": "Office", "visible": true },
+    { "id": "action", "width": 30, "label": "Action", "visible": true }
+  ]
+}

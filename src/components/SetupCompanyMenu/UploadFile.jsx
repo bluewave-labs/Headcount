@@ -2,7 +2,7 @@ import Box from '@mui/system/Box';
 import Stack from '@mui/system/Stack';
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import { useState, createRef } from 'react';
-import { colors, fonts } from '../../Styles';
+import { colors, fonts } from '../../assets/Styles';
 
 /**
  * Intermediate component for uploading an image in the SetupCompanyMenu component

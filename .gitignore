@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/client
+/src/components/TestComponents
 
 # testing
 /coverage
@@ -13,6 +15,7 @@
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -21,6 +24,10 @@
 /dev
 /constants/data/images
 
+.storybook
+.vscode
+/src/stories
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -28,5 +35,6 @@ yarn-error.log*
 *storybook.log
 .storybook/
 /src/stories
+/src/assets/FetchServices/BaseUrl.json
 
 .env

@@ -2,7 +2,7 @@ import Box from '@mui/system/Box';
 import Stack from '@mui/system/Stack';
 import SelectItem from './SelectItem';
 import HRMButton from '../Button/HRMButton';
-import { colors, fonts } from '../../Styles';
+import { colors, fonts } from '../../assets/Styles';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 const axios = require('axios');
@@ -99,6 +99,7 @@ export default function SetupRolesMenu({advancePage, style}) {
 
     return (
         <Box sx={{...{
+            width: "1003px",
             boxSizing: "border-box",
             border: "1px solid #EBEBEB",
             borderRadius: 2,

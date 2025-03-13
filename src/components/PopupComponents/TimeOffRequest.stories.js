@@ -13,6 +13,7 @@ export default {
 //Stories for each TimeOffRequest type
 export const Primary = {
     args: {
-        close: () => {}
+        close: () => {},
+        sendRequest: () => {}
     }
 };

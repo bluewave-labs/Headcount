@@ -1,0 +1,46 @@
+{
+  "employmentType": [
+    "",
+    "Apprenticeship",
+    "Casual employment",
+    "Contingent employment",
+    "Contract employment",
+    "Employment on commission",
+    "Full-time employment",
+    "Internship",
+    "Leased employment",
+    "Part-time employment",
+    "Probation",
+    "Seasonal employment",
+    "Traineeship"
+  ],
+  "compensationType": [
+    "",
+    "Bonuses",
+    "Hourly compensation",
+    "Salary",
+    "Salary & commission",
+    "Total compensation"
+  ],
+  "maritalStatus": [
+    "",
+    "Married",
+    "Single",
+    "Divorced",
+    "Registered Partnership",
+    "Separated"
+  ],
+  "gender": [
+    "",
+    "Agender",
+    "Cisgender",
+    "Female",
+    "Gender neutral",
+    "Genderfluid",
+    "Male",
+    "Nonbinary",
+    "Pangender",
+    "Transgender",
+    "Other"
+  ]
+}

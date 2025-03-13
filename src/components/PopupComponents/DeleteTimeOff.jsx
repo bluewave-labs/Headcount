@@ -1,23 +1,48 @@
 import Box from '@mui/system/Box';
 import Stack from '@mui/system/Stack';
+import PropTypes from 'prop-types';
 import HRMButton from '../Button/HRMButton';
 import { colors, fonts } from '../../Styles';
-import PropTypes from 'prop-types';
+import { update } from '../../assets/FetchServices/TimeOffHistory';
 
 /**
  * Popup component for confirming a request to delete an upcoming period of time off
  * 
  * Props:
- * - handleDelete<Function>: Function for cancelling a time off request.
- *      Syntax: handleDelete()
+ * - period<Object>: Time off period to be deleted
+ *      Syntax: {
+ *          id: <Integer>
+ *          timeOffId: <Integer>
+ *          from: <Date>
+ *          to: <Date>
+ *          hours: <Float>
+ *          type: <String>
+ *      }
  * 
  * - close<Function>: Function for closing this popup component.
  *      Syntax: close()
  * 
+ * - refresh<Function>: Function for refreshing the list of time off periods in the parent 
+ *      component.
+ *      Syntax: refresh()
+ * 
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {}
  */
-export default function DeleteTimeOff({handleDelete, close, style}) {
+export default function DeleteTimeOff({period, close, refresh, style}) {
+
+    //Function for deleting a time off request
+    function handleDelete() {
+        const updatedPeriod = {
+            id: period.id,
+            status: "Deleting"
+        }
+        update(updatedPeriod).then((data) => {
+            console.log(data);
+            refresh();
+        });
+    };
+
     return (
         <Box sx={{...{
             width: "411px",
@@ -45,11 +70,14 @@ export default function DeleteTimeOff({handleDelete, close, style}) {
 
 //Control panel settings for storybook
 DeleteTimeOff.propTypes = {
-    //The function to delete this time off request
-    handleDelete: PropTypes.func,
+    //Information on the time off period to be deleted.
+    period: PropTypes.object,
 
     //The function to close this component
-    close: PropTypes.func
+    close: PropTypes.func,
+
+    //Function for refreshing the list of time off periods in the parent component.
+    refresh: PropTypes.func
 };
 
 //Default values for this component

@@ -16,16 +16,14 @@ import PropTypes from 'prop-types';
  */
 export default function TimeOffRequestSent({close, style}) {
     return (
-        <Box
-            sx={{...{
-                border: "1px solid #D0D5DD",
-                borderRadius: "12px",
-                padding: "16px",
-                backgroundColor: "#FFFFFF",
-                color: colors.darkGrey,
-                fontFamily: fonts.fontFamily
-            }, ...style}}
-        >
+        <Box sx={{...{
+            border: "1px solid #D0D5DD",
+            borderRadius: "12px",
+            padding: "16px",
+            backgroundColor: "#FFFFFF",
+            color: colors.darkGrey,
+            fontFamily: fonts.fontFamily
+        }, ...style}}>
             <Stack direction="row" alignItems="center" spacing={4}>
                 <p>New time off request created successfully</p>
                 <CloseIcon onClick={close} sx={{

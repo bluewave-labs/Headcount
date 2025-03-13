@@ -128,7 +128,8 @@ export const Board = {
     args: {
         timeOffPeriods: timeOffPeriods,
         tableColumns: ['Type', 'Amount', 'Note'],
-        editFlag: true
+        editFlag: true,
+        refresh: () => {}
     }
 };
 
@@ -136,7 +137,8 @@ export const History = {
     args: {
         timeOffPeriods: timeOffPeriods,
         tableColumns: ['Type', 'Amount', 'Note'],
-        editFlag: false
+        editFlag: false,
+        refresh: () => {}
     }
 };
 
@@ -144,6 +146,7 @@ export const Team = {
     args: {
         timeOffPeriods: teamTimeOffPeriods,
         tableColumns: ['Person', 'Type', 'Amount', 'Note', 'Status'],
-        editFlag: false
+        editFlag: false,
+        refresh: () => {}
     }
 }

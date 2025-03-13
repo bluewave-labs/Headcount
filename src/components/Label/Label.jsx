@@ -1,6 +1,6 @@
 import Chip from '@mui/material/Chip';
 import { styled } from '@mui/system';
-import { colors, fonts } from '../../Styles';
+import { colors, fonts } from '../../assets/Styles';
 import PropTypes from 'prop-types';
 
 /**

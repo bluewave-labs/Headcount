@@ -4,11 +4,6 @@ import Checkbox from './Checkbox';
 export default {
     title: 'Interactables/Checkbox',
     component: Checkbox,
-    argTypes: {
-        enabled: {
-            control: { type: 'boolean' }
-        }
-    },
     parameters: {
         layout: 'centered'
     },
@@ -22,7 +17,8 @@ export const Box = {
         id: 'test',
         name: 'name',
         value: 'value',
-        onChange: () => {}
+        size: 'small',
+        enabled: true
     }
 };
 
@@ -32,6 +28,7 @@ export const Radio = {
         id: 'test',
         name: 'name',
         value: 'value',
-        onChange: () => {}
+        size: 'small',
+        enabled: true
     }
 };

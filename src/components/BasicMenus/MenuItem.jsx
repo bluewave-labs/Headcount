@@ -12,7 +12,6 @@ import PropTypes from 'prop-types';
  * - state<Boolean>: Flag determining whether the button this component represents is selected.
  * 
  * - setState<Function>: Function for toggling the selected state this component represents.
- *      Syntax: setState(<Boolean>)
  * 
  * - style<Object>: Optional prop for adding further inline styling.
  *      Default: {}

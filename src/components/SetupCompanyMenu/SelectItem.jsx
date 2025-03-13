@@ -16,7 +16,7 @@ import PropTypes from 'prop-types';
  * - style<Object>: Optional prop for adding further inline styling 
  *      Default: {}
  */
-export default function SelectItem({children, state, setState, style}) {
+export default function SelectItem({children, state, setState, index, style}) {
     //Button styles
     let Item = styled("div")({...{
         backgroundColor: "#FFFFFF",
@@ -35,7 +35,7 @@ export default function SelectItem({children, state, setState, style}) {
     }, ...style});
 
     return (
-        <Item onClick={() => setState(!state)}>{children}</Item>
+        <Item onClick={() => setState(index)}>{children}</Item>
     );
 };
 
