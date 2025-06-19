@@ -266,9 +266,11 @@ export default function AppTable(props) {
   );
   if (loading) {
     return (
+      <Box sx={{ padding: 16 }}>
       <NoContentComponent>
         <p>Loading. Please wait...</p>
       </NoContentComponent>
+      </Box>
     );
   }
   if (data.length === 0) {

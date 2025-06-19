@@ -6,6 +6,7 @@ import Dashboard from "./containers/Dashboard.js";
 import CompleteSignup from "./components/LoginComponents/CompleteSignupPage.js";
 import OffboardingPage from "./components/OffboardingComponents/OffboardingPage.jsx";
 import EmployeeOnboarding from "./containers/EmployeeOnboarding.js";
+import ResponsePage from "./components/SurveysPage/ResponsePage.jsx";
 import ErrorPage from "./components/Error/ErrorPage.jsx";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/complete-signup/:token" element={<CompleteSignup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/off-boarding/:token" element={<OffboardingPage />} />
+        <Route path="/satisfactionsurvey/:token" element={<ResponsePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes> 
     </StateProvider>

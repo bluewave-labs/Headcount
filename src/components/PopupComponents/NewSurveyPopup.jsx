@@ -17,6 +17,7 @@ import TableCell from "@mui/material/TableCell";
 import { styled } from "@mui/system";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import dayjs from "dayjs";
 import { fetchAll as fetchAllEmployees } from "../../assets/FetchServices/Employee";
 import { fetchAll as fetchAllTeams } from "../../assets/FetchServices/Team";
@@ -88,6 +89,17 @@ function formatDate(date) {
  *      Default: {}
  */
 export default function NewSurveyPopup({close, refresh, initialSurvey, style}) {
+    const location = useLocation();
+
+    const getHomePath = (location) => {
+        const fullUrl = window.location.href;
+        const relativeUrl = location.pathname;
+        if (fullUrl === relativeUrl) {
+          return fullUrl;
+        }
+        return fullUrl.substring(0, fullUrl.indexOf(relativeUrl));
+    };
+
     //Page number outlining the stage of the new survey creation
     const [pageNumber, setPageNumber] = useState(1);
     //Flag determining if a previous survey should be used
@@ -125,7 +137,7 @@ export default function NewSurveyPopup({close, refresh, initialSurvey, style}) {
         completedAt: dayjs().toISOString(),
         satisfactionSurveyQuestions: [],
         satisfactionSurveyRecipients: [],
-        frontendUrl: BASE_URL
+        frontendUrl: `${getHomePath(location)}/satisfactionsurvey/` //`${BASE_URL}/satisfactionsurvey/`
     });
     //Options when selecting survey recipients
     const [recipientOptions, setRecipientOptions] = useState([]);
@@ -140,10 +152,10 @@ export default function NewSurveyPopup({close, refresh, initialSurvey, style}) {
 
     //Retrieve all options for survey recipient selection when the popup is opened
     useEffect(() => {
-        console.log(newSurvey);
+        //console.log(newSurvey);
         getAllTeams();
         getAllRecipients();
-    }, [])
+    }, [newSurvey.satisfactionSurveyRecipients]);
 
     //Automatically adjust or validate dates to ensure a valid period is set
     useEffect(() => {
@@ -170,6 +182,8 @@ export default function NewSurveyPopup({close, refresh, initialSurvey, style}) {
         }
     }, [validation]);
 
+    
+
     //Retrieve all teams to populate survey recipient options
     function getAllTeams() {
         fetchAllTeams().then((data) => {
@@ -194,12 +208,14 @@ export default function NewSurveyPopup({close, refresh, initialSurvey, style}) {
                 return {
                     empId: e.empId,
                     category: "Employee",
-                    teamName: e.team.teamName,
+                    teamName: e.team ? e.team.teamName : "None",
                     name: `${e.firstName} ${e.lastName}`
                 }
             });
-            //console.log(employees);
-            setRecipientOptions(employees);
+            //Filter out recipients that have already been added as options
+            const filteredEmployees = employees.filter((rec) => newSurvey.satisfactionSurveyRecipients.every((rec2) => rec.empId !== rec2.empId));
+            //console.log(filteredEmployees);
+            setRecipientOptions(filteredEmployees);
         });
     };
 
@@ -283,7 +299,8 @@ export default function NewSurveyPopup({close, refresh, initialSurvey, style}) {
                         question: questionText
                     }
                 ]
-            })
+            });
+            setNewQuestionText("");
         }
     };
 
@@ -324,6 +341,7 @@ export default function NewSurveyPopup({close, refresh, initialSurvey, style}) {
                 });
             }
             //console.log(newSurvey.recipients);
+            setNewRecipient(null);
         }
     };
 

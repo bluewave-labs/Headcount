@@ -13,7 +13,7 @@ import { fonts } from "../../Styles";
  * 
  * Props:
  * - prev<Function>: Function provided by the parent component to transition to the previous page.
- *      Syntax: previous()
+ *      Syntax: prev()
  * 
  * - next<Function>: Function provided by the parent component to transition to the next page.
  *      Syntax: next()
@@ -51,13 +51,13 @@ export default function OnboardingSurvey({prev, next, save, onboardingId, style}
         updatedQuestion.answer = answer;
         newSurvey.push(updatedQuestion);
         setSurvey(newSurvey)
-    }
+    };
 
     //Function for saving changes to the onboarding survey
     function saveSurvey() {
         survey.forEach((response) => update(response));
         save();
-    }
+    };
 
     return (
         <Box sx={{...{
