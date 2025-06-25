@@ -10,8 +10,7 @@ Ensure you have the following installed:
 
 - **Node.js** v16 or newer  
 - **npm** (bundled with Node.js)  
-- **PostgreSQL** v12 or newer  
-- *(Optional)* **Docker & Docker‑Compose** for containerized setup  
+- **PostgreSQL** v12 or newer   
 
 ---
 
