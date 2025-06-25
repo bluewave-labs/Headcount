@@ -20,7 +20,7 @@ function CustomListItem(props) {
     <ListItem>
       <ListItemButton>
         {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
-        <ListItemText primary={primary} />
+        <ListItemText primary={primary} sx={{ "& .MuiTypography-root": { fontSize: "0.875rem" } }} />
       </ListItemButton>
     </ListItem>
   );
