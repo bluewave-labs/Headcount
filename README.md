@@ -52,3 +52,6 @@ Additional links:
 </a>
 
 
+## 📦 Installation
+
+For full setup instructions across all branches, see the [Installation Guide →](docs/INSTALL.md)
