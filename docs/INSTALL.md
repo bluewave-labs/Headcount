@@ -67,11 +67,3 @@ Feature branches: only migrate/seed when backend schema changed.
 Frontend branches: ensure .env has correct REACT_APP_API_URL.
 
 CI/CD branches: may include additional scripts—refer to branch README or pipeline definitions.
-
-# 7. Troubleshooting
-| Problem                                        | Solution                                                             |
-| ---------------------------------------------- | -------------------------------------------------------------------- |
-| `psql: database “headcount_db” does not exist` | Run `createdb headcount_db` and ensure Postgres is running           |
-| Migration errors                               | Check `.env` DB credentials; run `npm run migrate -- --verbose`      |
-| PORT in use                                    | Change `PORT` in `.env`, then restart the server                     |
-| Frontend 404 or CORS errors                    | Confirm `REACT_APP_API_URL` is correct and backend URL is accessible |
